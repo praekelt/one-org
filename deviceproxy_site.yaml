@@ -14,7 +14,7 @@ wurfl:
   cache_lifetime: 86400 # defaults to 0, which means it won't expire unless
                         # memcached decides to delete the key based on its
                         # least-recently-used counters when memory fills up.
-  smcloud_api_key: YOUR_WURFL_CLOUD_API_KEY
+  smcloud_api_key: 874152:WXEorViBTdfus7qha0y6SKFZx1c4gCRp
   # Connect to Memcached with the following parameters
   memcached:
     host: localhost
