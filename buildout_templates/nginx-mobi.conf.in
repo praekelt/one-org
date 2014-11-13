@@ -19,15 +19,15 @@ server {
     }
 
     # todo: use genshi template and for loop
-    location ^~ /static/basic/ {
-        alias   ${static-root-prefix}-basic-${static-root-suffix}/static/;
-        expires 31d;
-    }
+    #location ^~ /static/basic/ {
+    #    alias   ${static-root-prefix}-basic-${static-root-suffix}/static/;
+    #    expires 31d;
+    #}
 
-    location ^~ /static/smart/ {
-        alias   ${static-root-prefix}-smart-${static-root-suffix}/static/;
-        expires 31d;
-    }
+    #location ^~ /static/smart/ {
+    #    alias   ${static-root-prefix}-smart-${static-root-suffix}/static/;
+    #    expires 31d;
+    #}
 
     location ^~ /media/downloads/(.*) {
 	    internal;
@@ -60,7 +60,7 @@ server {
         keepalive_timeout  0;
 
         proxy_ignore_headers Set-Cookie;
-        proxy_cache mobi;
+        #proxy_cache mobi;
         proxy_cache_key $host$request_uri$is_args$args$cookie_is_authenticated;
         proxy_cache_valid 200 404 1m;
         proxy_cache_use_stale updating;
