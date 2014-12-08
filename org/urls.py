@@ -12,4 +12,11 @@ urlpatterns += patterns('',
         name='share-site-tile'
     ),
 
+    url(
+        r'^signup-tile/$',
+        'org.views.signup',
+        {},
+        name='signup-tile'
+    ),
+
 )

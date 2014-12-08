@@ -1,10 +1,15 @@
 from django.db import models
+from django.core.validators import validate_email
 
 from jmbo.models import ModelBase
 
 
 class Signup(models.Model):
-    email = models.CharField(max_length=64, unique=True)
+    email = models.CharField(
+        max_length=64,
+        unique=True,
+        validators=[validate_email]
+    )
     created = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:
