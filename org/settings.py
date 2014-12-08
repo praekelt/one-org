@@ -34,11 +34,11 @@ TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.spatialite', # Options are spatialite, postgis, mysql.
-        'NAME': 'org.db', # Or path to database file if using sqlite3.
+        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Options are spatialite, postgis, mysql.
+        'NAME': 'org', # Or path to database file if using sqlite3.
         'USER': 'org', # Not used with sqlite3.
         'PASSWORD': 'org', # Not used with sqlite3.
-        'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
+        'HOST': 'localhost', # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '', # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -88,7 +88,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'foundry.middleware.CheckProfileCompleteness',
     'django.contrib.messages.middleware.MessageMiddleware',
     'likes.middleware.SecretBallotUserIpUseragentMiddleware',
     'foundry.middleware.PaginationMiddleware',
@@ -150,9 +149,6 @@ INSTALLED_APPS = (
     'ckeditor',
     'contact',
     'poll',
-#    'chart',
-#    'music',
-#    'show',
     'simple_autocomplete',
     'pagination',
     'south',

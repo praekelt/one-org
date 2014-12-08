@@ -9,17 +9,10 @@ class Migration(SchemaMigration):
     depends_on = (('foundry', '0052_auto'),)
 
     def forwards(self, orm):
-        # Adding model 'TrivialContent'
-        db.create_table('org_trivialcontent', (
-            ('modelbase_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['jmbo.ModelBase'], unique=True, primary_key=True)),
-        ))
-        db.send_create_signal('org', ['TrivialContent'])
-
+        pass
 
     def backwards(self, orm):
-        # Deleting model 'TrivialContent'
-        db.delete_table('org_trivialcontent')
-
+        pass
 
     models = {
         'auth.group': {
@@ -140,10 +133,6 @@ class Migration(SchemaMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
         },
-        'org.trivialcontent': {
-            'Meta': {'ordering': "('-created',)", 'object_name': 'TrivialContent', '_ormbases': ['jmbo.ModelBase']},
-            'modelbase_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['jmbo.ModelBase']", 'unique': 'True', 'primary_key': 'True'})
-        }
     }
 
     complete_apps = ['org']
