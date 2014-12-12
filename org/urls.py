@@ -19,4 +19,11 @@ urlpatterns += patterns('',
         name='signup-tile'
     ),
 
+    url(
+        r'^sign-petition-tile/$',
+        'org.views.sign_petition',
+        {},
+        name='sign-petition-tile'
+    ),
+
 )

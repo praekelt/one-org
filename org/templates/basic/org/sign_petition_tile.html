@@ -1,0 +1,12 @@
+{% load i18n %}
+
+<div class="sign-petition-tile">
+    <div class="title">Sign the petition</div>
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <div class="buttons">
+            <input type="submit" value="{% trans "Sign the petition" %}" />
+        </div>
+	</form>
+<div>
