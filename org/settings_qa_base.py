@@ -4,9 +4,9 @@ from org.settings import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'org_qa',
-        'USER': 'org_qa',
-        'PASSWORD': 'org_qa',
+        'NAME': 'org',
+        'USER': 'org',
+        'PASSWORD': 'org',
         'HOST': 'localhost',
         'PORT': '5432',
     }
