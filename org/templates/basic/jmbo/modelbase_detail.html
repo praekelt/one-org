@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load jmbo_inclusion_tags jmbo_template_tags foundry_tags %}
+{% load jmbo_inclusion_tags jmbo_template_tags foundry_tags org_tags %}
 
 {% block extratitle %} - {{ object.title }}{% endblock %}
 
@@ -39,5 +39,5 @@
     <a name="sign-petition"</a>
     Sign petition form comes here
 
-    {% include "org/share_site_tile.html" %}
+    {% render_view "sign-petition-tile" %}
 {% endblock %}
