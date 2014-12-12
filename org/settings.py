@@ -34,7 +34,7 @@ TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Options are spatialite, postgis, mysql.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'org', # Or path to database file if using sqlite3.
         'USER': 'org', # Not used with sqlite3.
         'PASSWORD': 'org', # Not used with sqlite3.
@@ -131,7 +131,7 @@ INSTALLED_APPS = (
     'export',
     'snippetscream',
     'generate',
-    'jmbo_calendar',
+#    'jmbo_calendar',
     'jmbo',
     'photologue',
     'captcha',
@@ -157,7 +157,7 @@ INSTALLED_APPS = (
     'analytics',
     'gunicorn',
     'sites_groups',
-    'atlas',
+#    'atlas',
     'tastypie',
     'social_auth',
     'dfp',
