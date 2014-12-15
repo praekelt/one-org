@@ -28,7 +28,7 @@ class SignPetitionForm(forms.ModelForm):
             error_msg = "Must include at least one contact field."
             raise forms.ValidationError(error_msg)
 
-        return cleaned_data;
+        return cleaned_data
         
 
     class Meta:

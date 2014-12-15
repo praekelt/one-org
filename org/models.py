@@ -23,12 +23,10 @@ class PetitionEntry(models.Model):
     name = models.CharField(max_length=255)
     mobile_number = models.CharField(
         max_length=16,
-        unique=True,
         blank=True
     )
     email = models.CharField(
         max_length=64,
-        unique=True,
         validators=[validate_email],
         blank=True
     )
