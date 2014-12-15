@@ -26,4 +26,11 @@ urlpatterns += patterns('',
         name='sign-petition-tile'
     ),
 
+    url(
+        r'^sign-petition-success/$',
+        'django.views.generic.simple.direct_to_template',
+        {'template': 'org/sign_petition_success.html'},
+        name='sign-petition-success'
+    ),
+
 )

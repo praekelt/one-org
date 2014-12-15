@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load foundry_tags %}
+
+{% block content %}
+    <div class="sign-petition-success">
+        <div class="title">Thank you!</div>
+        <p>Thank you for telling world leaders to act! Your actions count!Thank you for telling world leaders to act! Your actions count!</p>
+        {% get_listing_queryset "downloads" as "qs" %}
+        {% listing qs style="Vertical" title="" %}
+        {% include "org/share_site_tile.html" %}
+    </div>
+{% endblock %}

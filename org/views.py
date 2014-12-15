@@ -33,9 +33,7 @@ def sign_petition(request):
         form = SignPetitionForm(request.POST)
         if form.is_valid():
             obj = form.save()
-            msg = _("Thank you for signing the petition.")
-            messages.success(request, msg, fail_silently=True)
-            return HttpResponseRedirect(reverse("home"))
+            return HttpResponseRedirect(reverse("sign-petition-success"))
     else:
         form = SignPetitionForm()
 

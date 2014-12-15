@@ -2,11 +2,9 @@
 
 {% jmbocache 3600 'modelbase-list-item-inclusion' object.id object.modified %}
     <div class="title">
-        <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
-        {% if object.description %}
-            <div class="description">
-                {{ object.description }}
-            </div>
-        {% endif %}
+        {{ object.title }}
+    </div>
+    <div class="content">
+        {{ object.content|safe }}
     </div>
 {% endjmbocache %}
