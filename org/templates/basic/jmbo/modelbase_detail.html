@@ -25,7 +25,7 @@
     {% get_listing_queryset "detail-banners" as "qs" %}
     {% listing qs title="" style="Vertical" %}
 
-    <a href="#sign-petition" class="sign-the-petition">Sign the petition</a>
+    {% comment %}<a href="#sign-petition" class="sign-the-petition">Sign the petition</a>{% endcomment %}
 
     <div class="page section_news object-detail {{ object.class_name.lower }}-detail">
 
@@ -38,7 +38,5 @@
 	</div>
 
     <a name="sign-petition"</a>
-    Sign petition form comes here
-
     {% render_view "sign-petition-tile" %}
 {% endblock %}
