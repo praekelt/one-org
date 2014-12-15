@@ -13,24 +13,19 @@ urlpatterns += patterns('',
     ),
 
     url(
-        r'^signup-tile/$',
-        'org.views.signup',
-        {},
-        name='signup-tile'
-    ),
-
-    url(
-        r'^sign-petition-tile/$',
-        'org.views.sign_petition',
-        {},
-        name='sign-petition-tile'
-    ),
-
-    url(
         r'^sign-petition-success/$',
         'django.views.generic.simple.direct_to_template',
         {'template': 'org/sign_petition_success.html'},
         name='sign-petition-success'
     ),
 
+)
+
+urlpatterns.insert(0,
+    url(
+        r'^$',
+        'org.views.home',
+        {},
+        name='home'
+    ),
 )

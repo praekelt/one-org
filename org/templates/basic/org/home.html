@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n foundry_tags org_tags %}
+
+{% block content %}
+    {% get_listing_queryset "banners" as "qs1" %}
+    {% listing qs1 title="" style="Vertical" %}
+    {% get_listing_queryset "posts" as "qs2" %}
+    {% listing qs2 title="" style="Vertical" %}
+
+    <a name="sign-petition"></a>
+    <div class="sign-petition-tile">
+        <div class="title">Sign the petition</div>
+        <form action=".#sign-petition" method="POST">
+            {% csrf_token %}
+            {{ form.as_div }}
+            <div class="buttons">
+                <input type="submit" value="{% trans "Sign the petition" %}" />
+            </div>
+        </form>
+    <div>
+{% endblock %}

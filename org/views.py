@@ -9,26 +9,7 @@ from org.models import Signup
 from org.forms import SignupForm, SignPetitionForm
 
 
-def signup(request):
-    if request.method == "POST":
-        form = SignupForm(request.POST)
-        if form.is_valid():
-            obj = form.save()
-            msg = _("You have successfully joined One.")
-            messages.success(request, msg, fail_silently=True)
-            return HttpResponseRedirect(reverse("home"))
-    else:
-        form = SignupForm()
-
-    extra = dict(form=form)
-    return render_to_response(
-       "org/signup_tile.html",
-        extra,
-        context_instance=RequestContext(request)
-    )
-
-
-def sign_petition(request):
+def home(request):
     if request.method == "POST":
         form = SignPetitionForm(request.POST)
         if form.is_valid():
@@ -39,7 +20,7 @@ def sign_petition(request):
 
     extra = dict(form=form)
     return render_to_response(
-       "org/sign_petition_tile.html",
+       "org/home.html",
         extra,
         context_instance=RequestContext(request)
     )
