@@ -1,0 +1,63 @@
+/* Global */
+html, body, input { margin: 0; padding: 0; font-family: "Arial", "Helvetica", sans-serif; font-size: 1em; line-height: 1.4em; }
+a, a:hover, a:visited { color: #000; text-decoration: none; }
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+:focus { outline: none; }
+.cyan { background: #00babe; }
+
+/* Header */
+#header { padding: 7px; border-bottom: 3px solid #00babe; text-align: center; }
+#header img { width: 60px; display: block; margin: 0 auto; }
+
+/* Footer */
+#footer { padding: 10px 20px 20px 20px; background: #fff; color: #a4a4a4; }
+#footer a { color: #a4a4a4; }
+
+/* Menu */
+.foundry-menu { border-top: 1px solid #efefef; }
+.foundry-menu .item { padding: 10px 20px; border-bottom: 1px solid #efefef; }
+.foundry-menu .item a { color: #00babe; display: block; }
+
+/* Signup */
+.signup-tile .title { background: #000; padding: 10px 0; text-align: center; text-transform: uppercase; color: #fff; }
+.signup-tile form { padding: 20px; }
+
+/* Sign Petition */
+.sign-petition-tile .title { background: #000; padding: 10px 0; text-align: center; text-transform: uppercase; color: #fff; }
+.sign-petition-tile form { padding: 20px; background: #efefef; }
+
+/* Forms */
+form .field input { width: 100%; border: 1px solid #c5cece; padding: 7px; }
+form .buttons input { width: 100%; padding: 10px 0;  background: #00babe; color: #fff; text-align: center; text-transform: uppercase; border: 0; }
+li.required > label, div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px; text-transform: uppercase; color: #616161; background: 0!important; }
+
+/* Sharing */
+.share-site-tile > .title { padding: 20px 0 0 0; text-align: center; }
+.share-site-tile > .sharing { padding: 10px 20px 20px 20px; text-align: center; }
+.share-site-tile > .sharing div { display: inline; }
+.share-site-tile > .sharing img { width: 35px; }
+
+/* Item - Post */
+.item-post { background: #000; padding: 12px 20px 20px 20px; }
+.item-post .title a { font-size: 1.5em; line-height: 1.6em; color: #00babe; }
+.item-post .description { color: #fff; }
+
+/* Item - Download */
+.item-download { padding: 15px; background: #00babe; color: #fff; text-align: center;  }
+.item-download a { color: #fff; display: block; text-transform: uppercase; } 
+.item-download .meta { display: none; }
+
+/* Item - Image Banner */
+.item-imagebanner img { width: 100%; display: block; }
+
+/* Post Detail */
+.post-detail { padding: 20px; }
+.post-detail-inclusion .image img { width: 100%; }
+.object-header > .title { padding: 0 0 10px 0; font-size: 1.5em; line-height: 1.6em; color: #00babe; }
+
+/* Static Titles */
+.sign-the-petition { background: #00babe; padding: 10px 20px; text-align: center; text-transform: uppercase; color: #fff; }
+.flat-page > .title,
+.static-page > .title { background: #00babe; padding: 10px 20px; text-transform: uppercase; color: #fff; }
+.flat-page > *,
+.static-page > * { padding: 0 20px; }

@@ -13,3 +13,4 @@ develop-eggs/
 media/
 parts/
 src/
+.DS_Store
