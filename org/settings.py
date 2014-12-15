@@ -327,6 +327,44 @@ CELERY_QUEUES = {
     },
 }
 
+ADMIN_APPS_EXCLUDE = (
+    'Cal',
+    'Event',
+    'Photologue',
+    'Publisher',
+    'Registration',
+    'Auth',
+    'Competition',
+    'Djcelery',
+    'Sites',
+    'Social_Auth',
+    'Analytics',
+    'Show',
+    'Music',
+    'Atlas',
+    'Jmbo',
+    'Jmbo_Calendar',
+    'Gallery',
+    'Poll',
+    'Foundry',
+    'Category',
+)
+
+ADMIN_MODELS_EXCLUDE = (
+    'Banner proxies',
+    'Code banners',
+    'Dfp banners',
+    'Competition preferences',
+    'Contact  preferences',
+    'Gallery preferencess',
+    'Login Preferences',
+    'Naughty Word Preferences',
+    'Password Reset Preferences',
+    'Registration Preferences',
+    'Text overlay temporary downloads',
+)
+
+
 # Debug toolbar. Uncomment if required.
 #INSTALLED_APPS += ('debug_toolbar',)
 #MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
