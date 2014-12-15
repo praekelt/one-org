@@ -29,7 +29,9 @@ a, a:hover, a:visited { color: #000; text-decoration: none; }
 /* Forms */
 form .field input { width: 100%; border: 1px solid #c5cece; padding: 7px; }
 form .buttons input { width: 100%; padding: 10px 0;  background: #00babe; color: #fff; text-align: center; text-transform: uppercase; border: 0; }
-li.required > label, div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px; text-transform: uppercase; color: #616161; background: 0!important; }
+form .field div > label,
+li.required > label, 
+div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px; text-transform: uppercase; color: #616161; background: 0!important; }
 
 /* Sharing */
 .share-site-tile > .title { padding: 20px 0 0 0; text-align: center; }
@@ -38,12 +40,13 @@ li.required > label, div.required > label { padding: 0!important; margin: 0 0 2p
 .share-site-tile > .sharing img { width: 35px; }
 
 /* Item - Post */
-.item-post { background: #000; padding: 12px 20px 20px 20px; }
+.item-post { padding: 12px 20px 20px 20px; }
+.item-post .title,
 .item-post .title a { font-size: 1.5em; line-height: 1.6em; color: #00babe; }
 .item-post .description { color: #fff; }
 
 /* Item - Download */
-.item-download { padding: 15px; background: #00babe; color: #fff; text-align: center;  }
+.item-download { padding: 15px; background: #000; color: #fff; text-align: center;  }
 .item-download a { color: #fff; display: block; text-transform: uppercase; } 
 .item-download .meta { display: none; }
 
@@ -57,7 +60,9 @@ li.required > label, div.required > label { padding: 0!important; margin: 0 0 2p
 
 /* Static Titles */
 .sign-the-petition { background: #00babe; padding: 10px 20px; text-align: center; text-transform: uppercase; color: #fff; }
+.sign-petition-success > .title,
 .flat-page > .title,
 .static-page > .title { background: #00babe; padding: 10px 20px; text-transform: uppercase; color: #fff; }
 .flat-page > *,
-.static-page > * { padding: 0 20px; }
+.static-page > *,
+.sign-petition-success > p { padding: 0 20px; }
