@@ -19,6 +19,19 @@ class SignupForm(forms.ModelForm):
 
 class SignPetitionForm(forms.ModelForm):
 
+    def clean(self):
+        cleaned_data = super(SignPetitionForm, self).clean()
+        
+        email = cleaned_data.get("email")
+        mobile_number = cleaned_data.get("mobile_number")
+
+        if not email and not mobile_number:
+            error_msg = "You must include at least one contact field."
+            raise forms.ValidationError(error_msg)
+
+        return cleaned_data
+        
+
     class Meta:
         model = PetitionEntry
 
