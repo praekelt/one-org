@@ -16,5 +16,3 @@ src/
 .DS_Store
 eggs/
 org.db
-org/migrations/0003_auto__add_field_petitionentry_email.py
-org/migrations/0004_auto__chg_field_petitionentry_email__chg_field_petitionentry_mobile_nu.py
