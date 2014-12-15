@@ -355,7 +355,7 @@ ADMIN_MODELS_EXCLUDE = (
     'Code banners',
     'Dfp banners',
     'Competition preferences',
-    'Contact  preferences',
+    'Contact preferences',
     'Gallery preferencess',
     'Login Preferences',
     'Naughty Word Preferences',

@@ -1,8 +1,7 @@
 from django.contrib import admin
 
 from jmbo.admin import ModelBaseAdmin
-from org.models import Signup, PetitionEntry
+from org.models import PetitionEntry
 
 
-admin.site.register(Signup, admin.ModelAdmin)
 admin.site.register(PetitionEntry, admin.ModelAdmin)
