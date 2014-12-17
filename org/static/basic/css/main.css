@@ -2,6 +2,8 @@
 html, body, input { margin: 0; padding: 0; font-family: "Arial", "Helvetica", sans-serif; font-size: 1em; line-height: 1.4em; }
 a, a:hover, a:visited { color: #000; text-decoration: none; }
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+input[type="text"], input[type="password"], input[type="submit"], select, textarea { outline: none; -webkit-border-radius: 0px; -webkit-appearance: none; }
+a { -webkit-text-size-adjust: none; -ms-text-size-adjust:none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 :focus { outline: none; }
 .cyan { background: #00babe; }
 
@@ -66,3 +68,15 @@ div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px;
 .flat-page > *,
 .static-page > *,
 .sign-petition-success > p { padding: 0 20px; }
+
+/* More flatpage styling -- all the text elements */
+
+.flat-page > * { padding: 0 20px!important; }
+.flat-page > ul,
+.flat-page > ol { margin: 0 20px; }
+.flat-page > hr { margin: 20px; }
+.flat-page a { color: #39b4ea; }
+
+.flat-page > .title { padding: 10px 20px!important; }
+
+.headline { font-size: 1.5em; }
