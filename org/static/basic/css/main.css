@@ -61,10 +61,10 @@ div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px;
 .object-header > .title { padding: 0 0 10px 0; font-size: 1.5em; line-height: 1.6em; color: #00babe; }
 
 /* Static Titles */
-.sign-the-petition { background: #00babe; padding: 10px 20px; text-align: center; text-transform: uppercase; color: #fff; }
+.sign-the-petition { background: #000; padding: 10px 20px; text-align: center; text-transform: uppercase; color: #fff; }
 .sign-petition-success > .title,
 .flat-page > .title,
-.static-page > .title { background: #00babe; padding: 10px 20px; text-transform: uppercase; color: #fff; }
+.static-page > .title { background: #000; padding: 10px 20px; text-transform: uppercase; color: #fff; }
 .flat-page > *,
 .static-page > *,
 .sign-petition-success > p { padding: 0 20px; }
