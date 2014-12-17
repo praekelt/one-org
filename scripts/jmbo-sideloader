@@ -1,0 +1,118 @@
+#!/bin/bash
+
+# Add new sites or upgrade them if they already exist. This script is idempotent.
+
+# Parse arguments
+while getopts "p:d:r:b:c:u:l:" opt; do
+    case $opt in
+        p)
+            PREFIX=$OPTARG;;
+        d)
+            DEPLOY_TYPE=$OPTARG;;
+        r)
+            REPO=$OPTARG;;
+    esac
+done
+
+if [[ -z "$PREFIX" || -z "$DEPLOY_TYPE" || -z "$REPO" ]];
+then
+    echo "Usage: deploy-project.sh -p (prefix) -d (deploy_type) ) "
+    echo "Example: deploy-project.sh -p praekelt -d qa -r praekelt/jmbo-foo -b develop -c praekeltdeploy:mypassword"
+    exit 1
+fi
+
+# Need this later
+ADATE=`date +"%Y%m%dT%H%M"`
+
+# Compute deploy and working directory
+CWD=`pwd`
+WORKING_DIR=${CWD}/build
+REPO_DIR=${CWD}/${REPO}
+PYTHON=${VENV}/bin/python
+
+echo "WD: ${WORKING_DIR}"
+echo "VENV: ${VENV}"
+
+rm -rf $WORKING_DIR
+mkdir $WORKING_DIR
+
+cd $REPO_DIR
+
+# Checkouts
+for f in `ls ${DEPLOY_TYPE}_*.cfg`
+do
+    FILENAME=$(basename $f)
+    # ${DEPLOY_TYPE}_base_* and ${DEPLOY_TYPE}_constants_* files must be ignored.
+    if [[ $FILENAME != *_base_*.cfg ]] && [[ $FILENAME != *_constants_*.cfg ]]; then
+
+        # Calculate directory name. Also name of script.
+        FTMP=${FILENAME%.*}
+        THEDIR=$PREFIX-${FTMP//_/-}
+
+        # Copy existing checkout
+        cd $WORKING_DIR
+        cp -a $REPO_DIR $THEDIR
+
+        cd ${THEDIR}
+
+        # Always re-bootstrap in case of a new version of distribute
+        # Try offline mode first. Download
+        # python-distribute.org/distribute_setup.py to /var/www, and
+        # https://pypi.python.org/packages/source/d/distribute/distribute-0.6.45.tar.gz
+        # to /var/www/.buildout/downloads if they are not there.
+        # todo: softcode
+        #$PYTHON bootstrap.py -v 1.7.0 --distribute --setup-source=~/distribute_setup.py --download-base=~/.buildout/downloads --eggs=~/.buildout/eggs
+        #EXIT_CODE=$?
+        #if [ $EXIT_CODE != 0 ]; then
+        #    # Try online mode
+        #    $PYTHON bootstrap.py -v 1.7.0 --distribute
+        #fi
+
+        # todo: distribute is deprecated and causing issues. Find offline equivalent for setuptools.
+        $PYTHON bootstrap.py -v 1.7.0
+
+        # Must use -i so buildout cache is used. That necessitates full paths as arguments.
+        ${WORKING_DIR}/${THEDIR}/bin/buildout -Nv -c ${WORKING_DIR}/${THEDIR}/$FILENAME
+        EXIT_CODE=$?
+        if [ $EXIT_CODE != 0 ]; then
+            echo "Buildout failure. Aborting."
+            exit 1
+        fi
+
+        #for f in `find ${WORKING_DIR}/${THEDIR}/bin/ -type f -name "*"`
+        #do
+            #sed -i "s?${WORKING_DIR}/${THEDIR}/?./?g" $f
+            #sed -i "s?${WORKING_DIR}/${THEDIR}?/var/praekelt?g" $f
+        #done
+    fi
+done
+
+# Copy eggs
+cp -a /home/ubuntu/.buildout/eggs ${WORKING_DIR}/one-org-eggs
+
+# Delete pyc files. Replace occurrences of /tmp/praekelt with /var/praekelt.
+# This sucks but is unavoidable since buildout interprets the directory from
+# which it is executing. My bash-fu is not strong enough to make this more
+# elegant.
+find $WORKING_DIR -name "*.pyc" | xargs rm
+for f in `find ${WORKING_DIR} -name "*.conf"`
+do
+    sed -i "s?${WORKING_DIR}?/var/praekelt?g" $f
+    sed -i "s?${VENV}?/var/praekelt/python?g" $f
+done
+for f in `find ${WORKING_DIR} -name "*.cfg"`
+do
+    sed -i "s?${WORKING_DIR}?/var/praekelt?g" $f
+    sed -i "s?${VENV}?/var/praekelt/python?g" $f
+done
+for f in `find ${WORKING_DIR} -type f -name "*" | grep /bin/`
+do
+    sed -i "s?${WORKING_DIR}?/var/praekelt?g" $f
+    sed -i "s?${VENV}?/var/praekelt/python?g" $f
+done
+
+# Patch egg locations
+for f in `find ${WORKING_DIR} -type f -name "*" | grep /bin/`
+do
+    sed -i "s?/home/ubuntu/\.buildout/eggs?/var/praekelt/one-org-eggs?g" $f
+done

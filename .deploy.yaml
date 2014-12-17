@@ -1,0 +1,21 @@
+buildscript: scripts/jmbo-sideloader -p org -r one-org -d live
+postinstall: scripts/migrate.sh
+user: www-data
+pip:
+ - genshi
+ - gunicorn
+ - device-proxy
+dependencies:
+ - postgresql-common
+ - libjpeg-dev
+ - zlib1g-dev
+ - memcached
+ - libxslt1-dev
+ - libproj0
+ - libproj-dev
+ - libgeos-3.2.2
+ - libgdal1-dev
+ - libgeoip1
+ - libgeoip-dev
+ - libgdal1-1.7.0
+ - postgis
