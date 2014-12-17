@@ -4,7 +4,7 @@
         "model": "sites.site",
         "fields": {
             "domain": "m.site.com",
-            "name": "Mobi site"
+            "name": "ONE Ebola Mobi"
         }
     }
 ]
