@@ -2,6 +2,7 @@ from django.conf.urls.defaults import patterns, url, include
 
 from foundry.urls import *
 
+import settings
 
 urlpatterns += patterns('',
 
@@ -19,6 +20,7 @@ urlpatterns += patterns('',
         name='sign-petition-success'
     ),
 
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )
 
 urlpatterns.insert(0,
