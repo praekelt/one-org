@@ -15,7 +15,7 @@ BUILDOUT_PATH =  path.split(path.abspath(path.join(path.dirname(sys.argv[0]))))[
 
 PROJECT_MODULE = 'org'
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # For Postgres (not location aware) do from command line

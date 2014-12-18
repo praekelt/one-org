@@ -4,6 +4,7 @@ from foundry.urls import *
 
 import settings
 
+
 urlpatterns += patterns('',
 
     url(
@@ -20,9 +21,16 @@ urlpatterns += patterns('',
         name='sign-petition-success'
     ),
 
-    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    url(
+        r'^404/$',
+        'django.views.generic.simple.direct_to_template',
+        {'template':'404.html'},
+        name='four-o-four'
+    ),
+
 )
 
+# Pre-empt so we override root
 urlpatterns.insert(0,
     url(
         r'^$',
@@ -31,3 +39,12 @@ urlpatterns.insert(0,
         name='home'
     ),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (
+            r'^media/(?P<path>.*)$',
+            'django.views.static.serve',
+            {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}
+        ),
+    )
