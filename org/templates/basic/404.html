@@ -7,10 +7,8 @@
     {% get_listing_queryset "posts" as "qs2" %}
     {% listing qs2 title="" style="Vertical" %}
     <div class="four-oh-four">
-        <h2>404</h2>
-        <h4>The directory you are searching for was not found.</h4>
-        <div class="buttons">
-            <a href="/">Home page</a>
-        </div>
+        <div class="title">Page Not Found</div>
+        <p>Unfortunately we cannot find the page you are looking for.</p>
+        <p>Please navigate to the <a href="/">Home page</a> and try again.</p>
     </div>
 {% endblock %}

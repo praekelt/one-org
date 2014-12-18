@@ -64,10 +64,12 @@ div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px;
 .sign-the-petition { background: #00babe; padding: 10px 20px; text-align: center; text-transform: uppercase; color: #fff; }
 .sign-petition-success > .title,
 .flat-page > .title,
-.static-page > .title { background: #00babe; padding: 10px 20px; text-transform: uppercase; color: #fff; }
+.static-page > .title,
+.four-oh-four > .title { background: #00babe; padding: 10px 20px; text-transform: uppercase; color: #fff; }
 .flat-page > *,
 .static-page > *,
-.sign-petition-success > p { padding: 0 20px; }
+.sign-petition-success > p,
+.four-oh-four > p { padding: 0 20px; }
 
 /* More flatpage styling -- all the text elements */
 
