@@ -1,1 +1,16 @@
-<h3>This ia 404</h3>
+{% extends "base.html" %}
+{% load i18n foundry_tags org_tags %}
+
+{% block content %}
+    {% get_listing_queryset "banners" as "qs1" %}
+    {% listing qs1 title="" style="Vertical" %}
+    {% get_listing_queryset "posts" as "qs2" %}
+    {% listing qs2 title="" style="Vertical" %}
+    <div class="four-oh-four">
+        <h2>404</h2>
+        <h4>The directory you are searching for was not found.</h4>
+        <div class="buttons">
+            <a href="/">Home page</a>
+        </div>
+    </div>
+{% endblock %}

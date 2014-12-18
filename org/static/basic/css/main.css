@@ -30,7 +30,7 @@ a { -webkit-text-size-adjust: none; -ms-text-size-adjust:none; -webkit-tap-highl
 
 /* Forms */
 form .field input { width: 100%; border: 1px solid #c5cece; padding: 7px; }
-form .buttons input { width: 100%; padding: 10px 0;  background: #00babe; color: #fff; text-align: center; text-transform: uppercase; border: 0; }
+form .buttons input, .buttons a { width: 100%; padding: 10px 0;  background: #00babe; color: #fff; text-align: center; text-transform: uppercase; border: 0; }
 form .field div > label,
 li.required > label, 
 div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px; text-transform: uppercase; color: #616161; background: 0!important; }
@@ -80,3 +80,8 @@ div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px;
 .flat-page > .title { padding: 10px 20px!important; }
 
 .headline { font-size: 1.5em; }
+
+/*404*/
+.four-oh-four { text-align:center;color:#F00; }
+.four-oh-four a { display:block;}
+.four-oh-four .buttons { padding:0 20px 20px 20px; }
