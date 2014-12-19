@@ -3,7 +3,7 @@ from django.core.validators import validate_email
 
 from jmbo.models import ModelBase
 
-from org.cosntants import COUNTRIES
+from org.constants import COUNTRIES
 
 
 class Signup(models.Model):
