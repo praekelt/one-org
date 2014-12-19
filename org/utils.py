@@ -13,4 +13,4 @@ def get_country_code(request):
         return ''
 
     g = GeoIP()
-    return g.country(ip)['country_code'] or 'ZA'
+    return g.country(ip)['country_code'] or ''
