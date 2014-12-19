@@ -19,6 +19,12 @@ class SignupForm(forms.ModelForm):
 
 class SignPetitionForm(forms.ModelForm):
 
+    def __init__(self, *args, **kwargs):
+        country_code = kwargs.pop('country_code', '')
+        super(SignPetitionForm, self).__init__(*args, **kwargs)
+
+        self.fields['country'].initial = country_code
+
     def clean(self):
         cleaned_data = super(SignPetitionForm, self).clean()
         

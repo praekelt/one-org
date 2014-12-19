@@ -3,6 +3,8 @@ from django.core.validators import validate_email
 
 from jmbo.models import ModelBase
 
+from org.cosntants import COUNTRIES
+
 
 class Signup(models.Model):
     email = models.CharField(
@@ -21,6 +23,10 @@ class Signup(models.Model):
 
 class PetitionEntry(models.Model):
     name = models.CharField(max_length=255)
+    country = models.CharField(
+        max_length=255,
+        choices=COUNTRIES
+    )
     mobile_number = models.CharField(
         max_length=16,
         blank=True
