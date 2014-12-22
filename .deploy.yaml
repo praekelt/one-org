@@ -1,5 +1,5 @@
-buildscript: scripts/jmbo-sideloader -p org -r one-org -d live
-postinstall: scripts/migrate.sh
+buildscript: scripts/deploy
+postinstall: scripts/postinstall.sh
 user: www-data
 pip:
  - genshi
@@ -19,3 +19,4 @@ dependencies:
  - libgeoip-dev
  - libgdal1-1.7.0
  - postgis
+ - postgresql-9.3-postgis-scripts
