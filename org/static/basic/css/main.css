@@ -66,7 +66,7 @@ div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px;
 .flat-page > .title,
 
 .static-page > .title,
-.four-oh-four > .title { background: #00babe; padding: 10px 20px; text-transform: uppercase; color: #fff; }
+.four-oh-four > .title { background: #000; padding: 10px 20px; text-transform: uppercase; color: #fff; }
 
 .flat-page > *,
 .static-page > *,
