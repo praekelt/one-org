@@ -43,5 +43,5 @@ class PetitionEntry(models.Model):
         verbose_name_plural = "Petition Entries"
 
     def __unicode__(self):
-        return mobile_number
+        return self.mobile_number
 
