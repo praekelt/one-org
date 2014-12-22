@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="flat-page">
+    <div class="title">{{ flatpage.title }}</div>
+    {{ flatpage.content }}
+    <div class="link">
+        <a href="/">
+            Take action now by signing the petition!
+        </a>
+    </div>
+</div>    
+{% endblock %}
