@@ -18,6 +18,7 @@ def abspath(*args):
     return os.path.join(PROJECT_ROOT, *args)
 
 SCRIPT_PATH =  path.abspath(path.dirname(__file__))
+GEOIP_PATH = abspath('..')
 
 PROJECT_MODULE = 'org'
 
@@ -76,7 +77,7 @@ MEDIA_ROOT = abspath('../media')
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = abspath('../static')
+STATIC_ROOT = abspath('../static/basic')
 
 STATIC_URL = '/static/'
 
