@@ -6,16 +6,14 @@ TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'org_live',
-        'USER': 'org_live',
-        'PASSWORD': 'org_live',
+        'USER': 'postgres',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
     }
 }
-
-MEDIA_ROOT = '%s/../org-media-live/' % BUILDOUT_PATH
 
 CACHES = {
     'default': {
@@ -25,9 +23,7 @@ CACHES = {
     }
 }
 
-CKEDITOR_UPLOAD_PATH = '%s/../org-media-live/uploads/' % BUILDOUT_PATH
-
 COMPRESS_ENABLED = True
 
-SENTRY_DSN = 'ENTER_YOUR_SENTRY_DSN_HERE'
+#SENTRY_DSN = 'ENTER_YOUR_SENTRY_DSN_HERE'
 SENTRY_CLIENT = 'raven.contrib.django.celery.CeleryClient'
