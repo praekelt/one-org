@@ -23,18 +23,18 @@ class Signup(models.Model):
 
 class PetitionEntry(models.Model):
     name = models.CharField(max_length=255)
-    country = models.CharField(
-        max_length=255,
-        choices=COUNTRIES
+    email = models.CharField(
+        max_length=64,
+        validators=[validate_email],
+        blank=True
     )
     mobile_number = models.CharField(
         max_length=16,
         blank=True
     )
-    email = models.CharField(
-        max_length=64,
-        validators=[validate_email],
-        blank=True
+    country = models.CharField(
+        max_length=255,
+        choices=COUNTRIES
     )
     created = models.DateTimeField(auto_now_add=True, db_index=True)
 
