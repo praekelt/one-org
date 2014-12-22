@@ -162,7 +162,7 @@ INSTALLED_APPS = (
     'analytics',
     'gunicorn',
     'sites_groups',
-#    'atlas',
+    'atlas',
     'tastypie',
     'social_auth',
     'dfp',
