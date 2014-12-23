@@ -1,6 +1,5 @@
 buildscript: scripts/deploy
 postinstall: scripts/postinstall.sh
-user: www-data
 pip:
  - genshi
  - gunicorn

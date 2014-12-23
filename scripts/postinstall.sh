@@ -8,6 +8,9 @@ if [ ! -f ${INSTALLDIR}/one-org-installed ]; then
     mkdir ${INSTALLDIR}/${REPO}/media/upload
     mkdir ${INSTALLDIR}/${REPO}/static
 
+    chown -R ubuntu:ubuntu ${INSTALLDIR}/${REPO}/media
+    chown -R ubuntu:ubuntu ${INSTALLDIR}/${REPO}/static
+
     $manage syncdb --noinput
     $manage migrate --noinput
     $manage collectstatic --noinput
