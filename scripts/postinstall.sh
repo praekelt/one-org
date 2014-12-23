@@ -4,6 +4,10 @@ if [ ! -f ${INSTALLDIR}/one-org-installed ]; then
     su - postgres -c "createdb org_live"
     su - postgres -c "psql org_live -c 'CREATE EXTENSION postgis; CREATE EXTENSION postgis_topology;'"
 
+    mkdir ${INSTALLDIR}/${REPO}/media
+    mkdir ${INSTALLDIR}/${REPO}/media/upload
+    mkdir ${INSTALLDIR}/${REPO}/static
+
     $manage syncdb --noinput
     $manage migrate --noinput
     $manage collectstatic --noinput
