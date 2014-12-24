@@ -1,12 +1,14 @@
 from django.db import models
-from django.core.validators import validate_email
+from django.core.validators import validate_email, RegexValidator
 
 from jmbo.models import ModelBase
 
 from org.constants import COUNTRIES
 
-from org.utils import validate_phone, validate_name
 
+class validators():
+    validate_phone = RegexValidator(regex=r'^\d{9,15}$', message="Phone number must be between 9 and 15 numerical values.")
+    validate_name = RegexValidator(regex=r'^[a-zA-Z]*$', message="Name must only include alpha characters.")
 
 class Signup(models.Model):
     email = models.CharField(
@@ -22,11 +24,10 @@ class Signup(models.Model):
     def __unicode__(self):
         return email
 
-
 class PetitionEntry(models.Model):
     name = models.CharField(
         max_length=255,
-        validators=[validate_name]
+        validators=[validators.validate_name]
     )
     country = models.CharField(
         max_length=255,
@@ -35,7 +36,7 @@ class PetitionEntry(models.Model):
     mobile_number = models.CharField(
         max_length=16,
         blank=True,
-        validators=[validate_phone]
+        validators=[validators.validate_phone]
     )
     email = models.CharField(
         max_length=64,
@@ -50,4 +51,5 @@ class PetitionEntry(models.Model):
 
     def __unicode__(self):
         return self.mobile_number
+
 

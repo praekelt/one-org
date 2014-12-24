@@ -1,10 +1,5 @@
 from django.contrib.gis.utils import GeoIP
-from django.core.validators import RegexValidator
 
-
-validate_phone = RegexValidator(regex=r'^\d{9,15}$', message="Must be between 9 and 15 numerical values.")
-
-validate_name = RegexValidator(regex=r'^[a-zA-Z]*$', message="Only alpha characters allowed.")
 
 def get_country_code(request):
 
