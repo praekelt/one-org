@@ -5,6 +5,8 @@ from jmbo.models import ModelBase
 
 from org.constants import COUNTRIES
 
+from org.utils import validate_phone, validate_name
+
 
 class Signup(models.Model):
     email = models.CharField(
@@ -22,14 +24,18 @@ class Signup(models.Model):
 
 
 class PetitionEntry(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(
+        max_length=255,
+        validators=[validate_name]
+    )
     country = models.CharField(
         max_length=255,
         choices=COUNTRIES
     )
     mobile_number = models.CharField(
         max_length=16,
-        blank=True
+        blank=True,
+        validators=[validate_phone]
     )
     email = models.CharField(
         max_length=64,
