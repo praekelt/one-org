@@ -7,7 +7,7 @@ from org.constants import COUNTRIES
 
 
 validate_phone = RegexValidator(regex=r'^\d{9,15}$', message="Your mobile number must be between 9 and 15 numeric values.")
-validate_name = RegexValidator(regex=r'^[a-zA-Z]*$', message="Your name must only include alphabetical characters.")
+validate_name = RegexValidator(regex=r'^[a-zA-Z\- ]*$', message="Your name must only include alphabetical characters.")
 
 class Signup(models.Model):
     email = models.CharField(
