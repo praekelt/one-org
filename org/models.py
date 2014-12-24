@@ -6,9 +6,8 @@ from jmbo.models import ModelBase
 from org.constants import COUNTRIES
 
 
-class validators():
-    validate_phone = RegexValidator(regex=r'^\d{9,15}$', message="Phone number must be between 9 and 15 numerical values.")
-    validate_name = RegexValidator(regex=r'^[a-zA-Z]*$', message="Name must only include alpha characters.")
+validate_phone = RegexValidator(regex=r'^\d{9,15}$', message="Your mobile number must be between 9 and 15 numeric values.")
+validate_name = RegexValidator(regex=r'^[a-zA-Z]*$', message="Your name must only include alpha characters.")
 
 class Signup(models.Model):
     email = models.CharField(
@@ -27,7 +26,7 @@ class Signup(models.Model):
 class PetitionEntry(models.Model):
     name = models.CharField(
         max_length=255,
-        validators=[validators.validate_name]
+        validators=[validate_name]
     )
     country = models.CharField(
         max_length=255,
@@ -36,7 +35,7 @@ class PetitionEntry(models.Model):
     mobile_number = models.CharField(
         max_length=16,
         blank=True,
-        validators=[validators.validate_phone]
+        validators=[validate_phone]
     )
     email = models.CharField(
         max_length=64,
