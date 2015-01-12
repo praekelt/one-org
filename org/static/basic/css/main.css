@@ -1,5 +1,5 @@
 /* Global */
-html, body, input { margin: 0; padding: 0; font-family: "Arial", "Helvetica", sans-serif; font-size: 1em; line-height: 1.4em; }
+html, body, input, select { margin: 0; padding: 0; font-family: "Arial", "Helvetica", sans-serif; font-size: 1em; line-height: 1.4em; }
 a, a:hover, a:visited { color: #000; text-decoration: none; }
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 input[type="text"], input[type="password"], input[type="submit"], select, textarea { outline: none; -webkit-border-radius: 0px; -webkit-appearance: none; }
@@ -30,6 +30,7 @@ a { -webkit-text-size-adjust: none; -ms-text-size-adjust:none; -webkit-tap-highl
 
 /* Forms */
 form .field input { width: 100%; border: 1px solid #c5cece; padding: 7px; }
+form .field select { width: 100%; border: 1px solid #c5cece; padding: 6px; }
 form .buttons input, .buttons a { width: 100%; padding: 10px 0;  background: #00babe; color: #fff; text-align: center; text-transform: uppercase; border: 0; }
 form .field div > label,
 li.required > label, 
@@ -53,6 +54,7 @@ div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px;
 .item-download .meta { display: none; }
 
 /* Item - Image Banner */
+.item-imagebanner { overflow: hidden; }
 .item-imagebanner img { width: 100%; display: block; }
 
 /* Post Detail */
@@ -62,11 +64,9 @@ div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px;
 
 /* Static Titles */
 .sign-the-petition { background: #000; padding: 10px 20px; text-align: center; text-transform: uppercase; color: #fff; }
-.sign-petition-success > .title,
 .flat-page > .title,
-
 .static-page > .title,
-.four-oh-four > .title { background: #00babe; padding: 10px 20px; text-transform: uppercase; color: #fff; }
+.four-oh-four > .title { background: #000; padding: 10px 20px; text-transform: uppercase; color: #fff; }
 
 .flat-page > *,
 .static-page > *,
@@ -85,7 +85,9 @@ div.required > label { padding: 0!important; margin: 0 0 2px 0; font-size: 11px;
 
 .headline { font-size: 1.5em; }
 
-/*404*/
+/* 404 */
 .four-oh-four { text-align:center;color:#F00; }
 .four-oh-four a { display:block;}
 .four-oh-four .buttons { padding:0 20px 20px 20px; }
+
+div.link a { width: 100%; padding: 10px 0; margin: 20px 0 25px 0; display: block; background: #00babe; color: #fff; text-align: center; text-transform: uppercase; border: 0; }
