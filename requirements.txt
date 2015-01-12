@@ -1,4 +1,4 @@
-Django==1.4.10
+Django==1.4.17
 South==0.7.6
 -e git+https://github.com/praekelt/django-photologue.git#egg=django-photologue
 django-appconf==0.5
