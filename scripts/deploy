@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp -a one-org ./build/
+
+${PIP} install -r one-org/requirements.txt
+

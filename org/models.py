@@ -3,6 +3,7 @@ from django.core.validators import validate_email, RegexValidator
 
 from jmbo.models import ModelBase
 
+from org import monkey
 from org.constants import COUNTRIES
 
 

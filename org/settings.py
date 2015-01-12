@@ -10,8 +10,15 @@ FOUNDRY = {
 }
 
 # Paths
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+def abspath(*args):
+    """convert relative paths to absolute paths relative to PROJECT_ROOT"""
+    return os.path.join(PROJECT_ROOT, *args)
+
 SCRIPT_PATH =  path.abspath(path.dirname(__file__))
-BUILDOUT_PATH =  path.split(path.abspath(path.join(path.dirname(sys.argv[0]))))[0]
+GEOIP_PATH = abspath('..')
 
 PROJECT_MODULE = 'org'
 
@@ -43,8 +50,6 @@ DATABASES = {
     }
 }
 
-GEOIP_PATH = BUILDOUT_PATH
-
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -65,16 +70,14 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '%s/media/' % BUILDOUT_PATH
-
-
+MEDIA_ROOT = abspath('../media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = '%s/static/' % BUILDOUT_PATH
+STATIC_ROOT = abspath('../static/basic')
 
 STATIC_URL = '/static/'
 
@@ -159,7 +162,7 @@ INSTALLED_APPS = (
     'analytics',
     'gunicorn',
     'sites_groups',
-#    'atlas',
+    'atlas',
     'tastypie',
     'social_auth',
     'dfp',
@@ -171,7 +174,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
     'django.contrib.sitemaps',
     'django.contrib.admin',
     'raven.contrib.django',
@@ -193,7 +195,7 @@ CKEDITOR_MEDIA_PREFIX = '/media/ckeditor/'
 
 # Specify absolute path to your ckeditor media upload directory.
 # Make sure you have write permissions for the path, i.e/home/media/media.lawrence.com/uploads/
-CKEDITOR_UPLOAD_PATH = '%s/media/uploads/' % BUILDOUT_PATH
+CKEDITOR_UPLOAD_PATH = abspath('../media/uploads/')
 
 CKEDITOR_CONFIGS = {
     'default': {'toolbar_Full': [
@@ -281,11 +283,6 @@ LOGGING = {
             'level': 'WARN',
             'class': 'logging.StreamHandler',
             'formatter': 'verbose'
-        },
-        'sentry': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'raven.contrib.django.handlers.SentryHandler',
         },
     },
     'loggers': {
