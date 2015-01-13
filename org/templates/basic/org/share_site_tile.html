@@ -4,6 +4,11 @@
 <div class="share-site-tile">
     <div class="title">Share the petition</div>
     <div class="sharing">
+        <div class="text">
+         <a href="sms:?body=Join%20me%20and%20take%20action%20on%20Ebola%3A%20{{ request.get_host|iriencode }}">
+            <img src="{{ STATIC_URL }}jmbo/images/sprite_text.png" alt="Share via text">
+          </a>
+        </div>
         <div class="facebook">
             <a href="http://www.facebook.com/sharer.php?u={{ request.get_host|iriencode }}&t={{ CURRENT_SITE.name|iriencode }}"
                target="blank">
