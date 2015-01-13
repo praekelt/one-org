@@ -4,7 +4,7 @@
         "model": "sites.site",
         "fields": {
             "domain": "m.site.com",
-            "name": "ONE Ebola Mobi"
+            "name": "Take Action on Ebola | ONE"
         }
     }
 ]
