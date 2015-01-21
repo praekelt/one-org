@@ -256,7 +256,7 @@ ADMIN_MODELS_EXCLUDE = (
 )
 
 JMBO_ANALYTICS = {
-    'google_analytics_id': 'xxx',
+    'google_analytics_id': 'UA-58792160-1',
 }
 
 PHOTOLOGUE_MAXBLOCK = 2 ** 20
