@@ -20,3 +20,5 @@ else
     $manage migrate --noinput
     $manage collectstatic --noinput
 fi
+
+/etc/init.d/memcached restart
